@@ -1,0 +1,731 @@
+/*======================
+1. VARIABLES Y RESET
+=======================*/
+:root {
+    --verde:#00cc66;
+    --verde-oscuro: #00994d;
+    --naranja: #ff6600; 
+    --grafito: #333;
+    --gris-claro: #f2f2f2;
+    --blanco: #fff;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body{
+    background-color: var(--gris-claro);
+    color: var(--grafito);
+    line-height: 1.6;
+}
+
+/*======================
+2. NAVBAR
+=======================*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 5%;
+    background-color: var(--blanco);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo{
+    height: 100px;
+    width: auto;
+}
+
+.logo img{
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+.menu a{
+    margin-left: 1rem;
+    text-decoration: none;
+    color: var(--grafito);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover{
+    color: var(--naranja);
+}
+
+/*======================
+3. SECCIÓN HERO
+=======================*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #eafaf1 0%, #ffffff 100%);
+    min-height: 80vh;
+}
+
+.hero-contenido {
+    max-width: 800px;
+
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--grafito);
+}
+
+.hero h1 span {
+    color: var(--verde-oscuro);
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--grafito);
+    margin-bottom: 2rem;
+}
+
+.promesa {
+    font-size: 1.2rem;
+    color: var(--grafito);
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.cta{
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    color: var(--grafito);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+/*======================
+4. BOTONES
+=======================*/
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-primario,
+.btn-secundario {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primario {
+    background-color: var(--verde);
+    color: var(--blanco);
+}
+
+.btn-primario:hover {
+    background-color: var(--verde-oscuro);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secundario {
+    background-color: var(--blanco);
+    color: var(--naranja);
+    border: 2px solid var(--naranja);
+}
+
+.btn-secundario:hover {
+    background-color: var(--naranja);
+    color: var(--blanco);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/*======================
+5. BENEFICIOS
+=======================*/
+.beneficios {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 4rem 2rem;
+    background-color: var(--gris-claro);
+    text-align: center;
+}
+
+.beneficios h2 {
+    width: 100%;
+    margin-bottom: 2rem;
+    color: var(--grafito);
+}
+
+.grid-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-bottom: 1rem;
+    color: var(--verde-oscuro);
+}
+
+.card p {
+    color: var(--grafito);
+    line-height: 1.5;
+}
+
+/*======================
+6. RESPONSIVE (MÓVIL)
+=======================*/
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        margin-top: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .subtitulo, .promesa {
+        font-size: 1rem;
+    }
+
+    .beneficios {
+        padding: 2rem 1rem;
+    }
+}
+
+/*======================
+7. SECCIÓN COMO FUNCIONA
+=======================*/
+.como-funciona {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: var(--blanco);
+    text-align: center;
+}
+
+.como-funciona h2 span {
+    color: var(--naranja);
+    font-weight: bold;
+}
+
+.como-funciona h2 {
+    margin-bottom: 2rem;
+    color: var(--grafito);
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-seccion {
+    font-size: 1.2rem;
+    color: #4e4444cf;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.subtitulo-seccion span {
+    color: var(--verde-oscuro);
+    font-weight: bold;
+}
+
+.pasos{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paso {
+    background-color: var(--gris-claro);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.paso:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.numero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--verde);
+    color: var(--blanco);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.paso h3 {
+    margin-bottom: 1rem;
+    color: var(--grafito);
+}
+
+.paso p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/*======================
+8. SECCIÓN PRECIOS
+=======================*/
+.precios {
+    padding: 5rem 5%;
+    background-color: var(--gris-claro);
+    text-align: center;
+}
+
+.precios h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--grafito);
+}
+
+.grid-precios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+}
+
+.precio-card {
+    background-color: var(--blanco);
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.precio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.precio-card.destacado {
+    border: 3px solid var(--verde);
+    transform: scale(1.03);
+}
+
+.etiqueta {
+    position: absolute;
+    top: -14px;
+    right: 20px;
+    background-color: var(--naranja);
+    color: var(--blanco);
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.precio-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--grafito);
+}
+
+.precio {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--verde-oscuro);
+    margin-bottom: 0.5rem;
+}
+
+.precio span {
+    font-size: 0.9rem;
+    color: #999;
+    font-weight: normal;
+}
+
+.ahorro {
+    color: var(--naranja);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.precio-card ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.precio-card ul li {
+    padding: 0.4rem 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.precio-card button {
+    width: 100%;
+}
+
+/*======================
+9. SECCIÓN ¿QUIÉNES SOMOS?
+=======================*/
+.quienes-somos {
+    padding: 4rem 5%;
+    background-color: var(--blanco);
+    text-align: center;
+}
+
+.quienes-somos h2{
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--grafito)
+}
+
+.texto-quienes{
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    text-align: left;
+}
+.texto-quienes p{
+    margin-bottom: 1.2rem;
+}
+
+.texto-quienes strong{
+    color: var(--verde-oscuro)
+}
+
+.lista-integrantes{
+    list-style: none;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: var(--gris-claro);
+    border-radius: 20px;
+    border-left: 5px solid var(--verde);
+}
+
+.lista-integrantes li{
+    padding: 0.4rem 0;
+    font-size: 1rem;
+}
+
+/*====================
+10. SECCIÓN B2B
+====================*/
+.restaurantes {
+    padding: 5rem 5%;
+    background-color: var(--gris-claro);
+    color: var(--grafito);
+    text-align: center;
+}
+
+.restaurantes h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.restaurantes .subtitulo-seccion {
+    color: var(--gris-claro);
+}
+
+.restaurantes p {
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*======================
+PÁGINA LEGAL (Aviso y Términos)
+=======================*/
+.legal {
+    max-width: 850px;
+    margin: 3rem auto;
+    padding: 3rem 2.5rem;
+    background-color: var(--blanco);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    line-height: 1.8;
+    color: #444;
+}
+
+.legal h1 {
+    color: var(--verde-oscuro);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.fecha-actualizacion {
+    color: #999;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gris-claro);
+}
+
+.legal h2 {
+    color: var(--grafito);
+    font-size: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.8rem;
+    padding-left: 0.8rem;
+    border-left: 4px solid var(--verde);
+}
+
+.legal h3 {
+    color: var(--grafito);
+    font-size: 1.05rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.legal p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.legal ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    padding-left: 1rem;
+}
+
+.legal ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.legal strong {
+    color: var(--grafito);
+}
+
+.legal a {
+    color: var(--verde-oscuro);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.legal a:hover {
+    color: var(--naranja);
+}
+
+/* Tabla dentro del contenido legal */
+.tabla-legal {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tabla-legal thead {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+.tabla-legal thead th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.tabla-legal tbody td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    vertical-align: top;
+}
+
+.tabla-legal tbody tr:nth-child(even) {
+    background-color: var(--gris-claro);
+}
+
+/* Mensaje final */
+.aceptacion-final {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background-color: #eafaf1;
+    border-left: 5px solid var(--verde);
+    border-radius: 10px;
+    font-style: italic;
+    color: var(--grafito);
+    font-weight: 500;
+}
+
+/* Botón de volver */
+.boton-volver {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .legal {
+        padding: 2rem 1.2rem;
+        margin: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+
+    .legal h1 {
+        font-size: 1.7rem;
+    }
+
+    .legal h2 {
+        font-size: 1.1rem;
+    }
+
+    .tabla-legal {
+        font-size: 0.8rem;
+    }
+
+    .tabla-legal thead th,
+    .tabla-legal tbody td {
+        padding: 0.6rem;
+    }
+}
+
+/*======================
+SECCIÓN FOOTER
+=======================*/
+footer {
+    background-color: var(--grafito);
+    color: var(--blanco);
+    padding: 4rem 5% 1.5rem;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+}
+
+/* Columna de la marca */
+.footer-marca h3 {
+    font-size: 1.8rem;
+    color: var(--verde);
+    margin-bottom: 0.5rem;
+    font-weight: 900;
+}
+
+.footer-marca p {
+    color: #bbb;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Columnas de enlaces */
+.footer-redes h4,
+.footer-legal h4 {
+    color: var(--blanco);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-redes a,
+.footer-legal a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-redes a:hover,
+.footer-legal a:hover {
+    color: var(--verde);
+    transform: translateX(5px);
+}
+
+/* Línea inferior con copyright */
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-copyright p {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+/*======================
+FOOTER RESPONSIVE (MÓVIL)
+=======================*/
+@media (max-width: 768px) {
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-redes a:hover,
+    .footer-legal a:hover {
+        transform: none; /* Sin desplazamiento en móvil */
+    }
+}
